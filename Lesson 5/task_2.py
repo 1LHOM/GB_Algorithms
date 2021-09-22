@@ -48,6 +48,8 @@ def decimal_to_hex(num: int) -> list:
                 num = 0
             else:
                 num = num % (a / 16)
+                if num == 0:
+                    hex_list.append(str(int(num)))
             a = a / 16
         else:
             a *= 16
@@ -70,4 +72,3 @@ x = [i for i in input('Enter first hex number: ').upper()]
 y = [i for i in input('Enter second hex number: ').upper()]
 
 print(hex_calculator(x, y))
-
