@@ -49,7 +49,12 @@ def decimal_to_hex(num: int) -> list:
             else:
                 num = num % (a / 16)
                 if num == 0:
-                    hex_list.append(str(int(num)))
+                    a /= 16
+                    while a != 0:
+                        hex_list.append(str(int(num)))
+                        a /= 16
+                        if a == 1:
+                            break
             a = a / 16
         else:
             a *= 16
